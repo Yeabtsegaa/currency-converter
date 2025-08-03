@@ -1,8 +1,10 @@
 import {useState} from 'react';
-import {useRecipeStore} from "./RecipeStore";
+import useRecipeStore from "./RecipeStore";
+import { useNavigate } from 'react-router-dom';
 
 const AddRecipeForm = () =>{
-    const addRecipe = useRecipeStore(state =>{state.addRecipe});
+    const addRecipe = useRecipeStore(state => state.addRecipe);
+    const navigate = useNavigate();
     const [title, setTitle] = useState("")
     const [description , setDescription] = useState("");
 
@@ -11,6 +13,7 @@ const AddRecipeForm = () =>{
         addRecipe({id:Date.now(), title, description});
         setTitle("")
         setDescription("");
+        navigate("/");
     }
 
     return(
@@ -26,7 +29,9 @@ const AddRecipeForm = () =>{
                 onChange={(e) => setDescription(e.target.value)}
                 placeholder ="Description ..."
              ></textarea>
+
              <button type="submit">Add Recipe</button>
+            
         </form>
     )
 

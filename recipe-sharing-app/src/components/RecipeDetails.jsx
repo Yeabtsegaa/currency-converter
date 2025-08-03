@@ -20,6 +20,25 @@ const RecipeDetails = () => {
     <div className="recipe-details">
       <h1>{recipe.title}</h1>
       <p>{recipe.description}</p>
+      
+      <div className="recipe-info">
+        <div className="recipe-meta">
+          <span className="difficulty">{recipe.difficulty}</span>
+          <span className="prep-time">Prep: {recipe.prepTime} min</span>
+          <span className="cook-time">Cook: {recipe.cookTime} min</span>
+        </div>
+        
+        {recipe.ingredients && recipe.ingredients.length > 0 && (
+          <div className="ingredients-list">
+            <h3>Ingredients:</h3>
+            <ul>
+              {recipe.ingredients.map((ingredient, index) => (
+                <li key={index}>{ingredient}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </div>
 
       <div className="recipe-actions">
         <button onClick={() => setIsEditing(!isEditing)}>

@@ -11,10 +11,14 @@ const AddRecipeForm = () =>{
     const [prepTime, setPrepTime] = useState(15);
     const [cookTime, setCookTime] = useState(30);
     const [difficulty, setDifficulty] = useState("Easy");
+    const [category, setCategory] = useState("Other");
+    const [tags, setTags] = useState("");
 
     const handleSubmit = (event) =>{
         event.preventDefault();
         const ingredientsArray = ingredients.split(',').map(item => item.trim()).filter(item => item);
+        
+        const tagsArray = tags.split(',').map(tag => tag.trim()).filter(tag => tag);
         
         addRecipe({
             id: Date.now(), 
@@ -23,7 +27,9 @@ const AddRecipeForm = () =>{
             ingredients: ingredientsArray,
             prepTime: parseInt(prepTime),
             cookTime: parseInt(cookTime),
-            difficulty
+            difficulty,
+            category,
+            tags: tagsArray
         });
         
         setTitle("");
@@ -32,6 +38,8 @@ const AddRecipeForm = () =>{
         setPrepTime(15);
         setCookTime(30);
         setDifficulty("Easy");
+        setCategory("Other");
+        setTags("");
         navigate("/");
     }
 
@@ -80,16 +88,40 @@ const AddRecipeForm = () =>{
                 </div>
                 <div className="form-group">
                     <label>Difficulty:</label>
-                    <select 
-                        value={difficulty} 
-                        onChange={(e) => setDifficulty(e.target.value)}
-                    >
-                        <option value="Easy">Easy</option>
-                        <option value="Medium">Medium</option>
-                        <option value="Hard">Hard</option>
-                    </select>
-                </div>
-             </div>
+                                         <select 
+                         value={difficulty} 
+                         onChange={(e) => setDifficulty(e.target.value)}
+                     >
+                         <option value="Easy">Easy</option>
+                         <option value="Medium">Medium</option>
+                         <option value="Hard">Hard</option>
+                     </select>
+                 </div>
+                 <div className="form-group">
+                     <label>Category:</label>
+                     <select 
+                         value={category} 
+                         onChange={(e) => setCategory(e.target.value)}
+                     >
+                         <option value="Italian">Italian</option>
+                         <option value="Indian">Indian</option>
+                         <option value="Mexican">Mexican</option>
+                         <option value="Mediterranean">Mediterranean</option>
+                         <option value="Dessert">Dessert</option>
+                         <option value="Salad">Salad</option>
+                         <option value="Other">Other</option>
+                     </select>
+                 </div>
+                 <div className="form-group">
+                     <label>Tags (comma-separated):</label>
+                     <input 
+                         type="text"
+                         value={tags}
+                         onChange={(e) => setTags(e.target.value)}
+                         placeholder="quick, dinner, healthy..."
+                     />
+                 </div>
+              </div>
 
              <button type="submit">Add Recipe</button>
             

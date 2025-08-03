@@ -350,6 +350,113 @@ form button:hover {
   font-size: 0.9rem;
 }
 
+/* Favorites and Recommendations Styles */
+.favorites-section,
+.recommendations-section {
+  margin-bottom: 3rem;
+}
+
+.recommendations-subtitle {
+  color: #666;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.favorites-grid,
+.recommendations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.no-favorites,
+.no-recommendations {
+  text-align: center;
+  padding: 2rem;
+  color: #666;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border: 1px dashed #dee2e6;
+}
+
+.no-favorites p,
+.no-recommendations p {
+  margin: 0.5rem 0;
+}
+
+/* Favorite Button Styles */
+.favorite-btn {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+}
+
+.favorite-btn:hover {
+  background-color: rgba(255, 192, 203, 0.2);
+  transform: scale(1.1);
+}
+
+.favorite-btn.favorited {
+  animation: heartBeat 0.3s ease-in-out;
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Recipe Header Styles */
+.recipe-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.recipe-header h1,
+.recipe-header h3 {
+  margin: 0;
+  flex: 1;
+}
+
+/* Recipe Tags Styles */
+.recipe-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+
+.tag {
+  background-color: #e9ecef;
+  color: #495057;
+  padding: 0.25rem 0.5rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Enhanced Recipe Cards */
+.favorite-card {
+  border: 2px solid #ff6b6b;
+  background-color: #fff5f5;
+}
+
+.recommendation-card {
+  border: 2px solid #4ecdc4;
+  background-color: #f0fffe;
+}
+
+.all-recipes-section {
+  margin-top: 2rem;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .filter-options {
@@ -368,5 +475,20 @@ form button:hover {
   .recipe-meta {
     flex-direction: column;
     gap: 0.5rem;
+  }
+  
+  .favorites-grid,
+  .recommendations-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .recipe-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  
+  .recipe-header h1,
+  .recipe-header h3 {
+    margin-bottom: 0.5rem;
   }
 }

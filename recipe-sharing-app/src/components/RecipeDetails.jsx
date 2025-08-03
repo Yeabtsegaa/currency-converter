@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import useRecipeStore from "./RecipeStore";
 import EditRecipeForm from "./EditRecipeForm";
 import DeleteRecipeButton from "./DeleteRecipeButton";
+import FavoriteButton from "./FavoriteButton";
 import { useState } from "react";
 
 const RecipeDetails = () => {
@@ -18,7 +19,10 @@ const RecipeDetails = () => {
 
   return (
     <div className="recipe-details">
-      <h1>{recipe.title}</h1>
+      <div className="recipe-header">
+        <h1>{recipe.title}</h1>
+        <FavoriteButton recipeId={recipe.id} />
+      </div>
       <p>{recipe.description}</p>
       
       <div className="recipe-info">
@@ -26,6 +30,12 @@ const RecipeDetails = () => {
           <span className="difficulty">{recipe.difficulty}</span>
           <span className="prep-time">Prep: {recipe.prepTime} min</span>
           <span className="cook-time">Cook: {recipe.cookTime} min</span>
+        </div>
+        
+        <div className="recipe-tags">
+          {recipe.tags && recipe.tags.map(tag => (
+            <span key={tag} className="tag">{tag}</span>
+          ))}
         </div>
         
         {recipe.ingredients && recipe.ingredients.length > 0 && (

@@ -269,31 +269,45 @@ const Search = () => {
                     </div>
                 )}
 
-                {/* Advanced Search Results */}
-                {searchResults && (
-                    <div className="bg-white rounded-xl shadow-lg p-6">
-                        <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                            Search Results ({searchResults.total_count} users found)
-                        </h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-                            {searchResults.items.map((user) => (
-                                <div key={user.id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
-                                    <div className="flex items-center space-x-3">
-                                        <img 
-                                            src={user.avatar_url} 
-                                            alt={`${user.login}'s avatar`} 
-                                            className="w-12 h-12 rounded-full"
-                                        />
-                                        <div>
-                                            <h4 className="font-medium text-gray-800">{user.login}</h4>
-                                            <p className="text-sm text-gray-600">ID: {user.id}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            ))}
+               
+           {/* Advanced Search Results */}
+{searchResults && (
+    <div className="bg-white rounded-xl shadow-lg p-6">
+        <h3 className="text-xl font-semibold text-gray-800 mb-4">
+            Search Results ({searchResults.total_count} users found)
+        </h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {searchResults.items.map((user) => (
+                <div 
+                    key={user.id} 
+                    className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+                >
+                    <div className="flex items-center space-x-3">
+                        <img 
+                            src={user.avatar_url} 
+                            alt={`${user.login}'s avatar`} 
+                            className="w-12 h-12 rounded-full"
+                        />
+                        <div>
+                            <h4 className="font-medium text-gray-800">{user.login}</h4>
+                            <p className="text-sm text-gray-600">ID: {user.id}</p>
+                            {/* Added GitHub profile link */}
+                            <a 
+                                href={user.html_url} 
+                                target="_blank" 
+                                rel="noopener noreferrer"
+                                className="text-blue-500 hover:underline text-sm"
+                            >
+                                View Profile
+                            </a>
                         </div>
                     </div>
-                )}
+                </div>
+            ))}
+        </div>
+    </div>
+)}
+
             </div>
         </div>
     );

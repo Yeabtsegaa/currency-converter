@@ -5,14 +5,17 @@ const Search = () => {
     const [username, setUsername] = useState("");
     const [userData, setUserData] = useState(null);
     const [error, setError] = useState("");
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         setError("");
         setUserData(null);
+        setLoading(true);
 
         if (!username.trim()) {
             setError("Please enter a username");
+            setLoading(false);
             return;
         }
         
@@ -20,7 +23,13 @@ const Search = () => {
             const data = await fetchUserData(username);
             setUserData(data);
         } catch (error) {
-            setError(error.message || "An error occurred");
+            if (error.message === "User not found") {
+                setError("Looks like we cant find the user");
+            } else {
+                setError(error.message || "An error occurred");
+            }
+        } finally {
+            setLoading(false);
         }
     };
 
@@ -33,8 +42,12 @@ const Search = () => {
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
-                <button type="submit">Search</button>
+                <button type="submit" disabled={loading}>
+                    {loading ? "Loading..." : "Search"}
+                </button>
             </form>
+            
+            {loading && <p>Loading</p>}
             {error && <p>{error}</p>}
 
             {userData && (

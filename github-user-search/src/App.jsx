@@ -1,4 +1,4 @@
-import Search from './components/search'
+import Search from './components/Search'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import './App.css'
 

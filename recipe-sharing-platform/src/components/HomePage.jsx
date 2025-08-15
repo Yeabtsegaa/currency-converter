@@ -11,7 +11,7 @@ export default function RecipeList(){
     },[])
 
     return(
-        <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-6 sm:grid-cols-1  bg-green-300 p-8 m-7">
+        <div class="grid lg:grid-cols-4 md:grid-cols-3 gap-6 sm:grid-cols-1 sm:grid-cols-2  bg-green-300 p-8 m-7">
             
             {recipes.map((recipe)=>(
                 <div key={recipe.id} className="p-2 bg-green-500 shadow-lg rounded-lg hover:scale-110 transition-transform duration-300 hover:shadow-[4px_4px_10px_black] transition-shadow duration-300 ">

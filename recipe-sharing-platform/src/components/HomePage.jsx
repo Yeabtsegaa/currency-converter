@@ -4,7 +4,7 @@ export default function RecipeList(){
     const [recipes,setRecipies] = useState([]);
 
     useEffect(()=>{
-        fetch("/data.json")
+        fetch(" src/data.json")
             .then((response) => response.json())
             .then((data) => setRecipies(data))
             .catch((error) => console.error("Error Loading JSON:", error))

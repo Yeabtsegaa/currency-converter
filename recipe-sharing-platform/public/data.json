@@ -11,7 +11,7 @@
         "1 onion",
         "2 tomatoes"
       ],
-      "steps": [
+      "instructions": [
         "Boil pasta",
         "Cook beef with onion",
         "Add tomatoes",
@@ -32,7 +32,7 @@
         "3 tomatoes",
         "Spices"
       ],
-      "steps": [
+      "instructions": [
         "Cook onions",
         "Add chicken & spices",
         "Add tomatoes",

@@ -74,7 +74,7 @@ const RecipeDetail = ()=>{
                     <div>
                         <h3 className="text-lg font-semibold mb-2">Steps</h3>
                         <ol className="list-decimal list-inside">
-                            {recipe.details.steps.map((step, index) => (
+                            {recipe.details.instructions.map((step, index) => (
                                 <li key={index}>{step}</li>
                             ))}
                         </ol>

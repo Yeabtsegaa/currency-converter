@@ -23,10 +23,19 @@ export default function RecipeList(){
                         <p className="text-white text-center mb-5">{recipe.summary}</p>
                          <Link to={`/recipes/${recipe.id}`} className ="text-white"> View Details  </Link>
                     </div>
+
                 </div>
             
             ))};
-            
+
+             <div className="flex justify-end mb-6">
+        <Link
+          to="/add-recipe"
+          className="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 transition duration-300"
+        >
+           Add Recipe
+        </Link>
+      </div>
 
         </div>
     );

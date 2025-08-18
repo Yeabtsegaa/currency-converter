@@ -46,7 +46,7 @@ const AddRecipe = () => {
 
   return (
     <div className="max-w-lg mx-auto mt-10 p-6 bg-white shadow-lg rounded-xl">
-      <h1 className="text-2xl font-bold mb-6 text-center">Add a Recipe</h1>
+      <h1 className="text-2xl font-bold mb-6 text-center ">Add a Recipe</h1>
       <form onSubmit={handleSubmit} className="space-y-4">
         {/* Title */}
         <div>
@@ -65,7 +65,7 @@ const AddRecipe = () => {
 
         {/* Summary */}
         <div>
-          <label className="block mb-1 font-medium">Ingredients</label>
+          <label className="block mb-1 font-medium md:font-small sm:font-small">Ingredients</label>
           <textarea
             name="Ingredients"
             value={form.Ingredients}

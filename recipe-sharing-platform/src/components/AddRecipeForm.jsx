@@ -65,30 +65,30 @@ const AddRecipe = () => {
 
         {/* Summary */}
         <div>
-          <label className="block mb-1 font-medium">Summary</label>
+          <label className="block mb-1 font-medium">Ingredients</label>
           <textarea
-            name="summary"
-            value={form.summary}
+            name="Ingredients"
+            value={form.Ingredients}
             onChange={handleChange}
             className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
           />
-          {errors.summary && (
-            <p className="text-red-500 text-sm">{errors.summary}</p>
+          {errors.ingredients && (
+            <p className="text-red-500 text-sm">{errors.ingredients}</p>
           )}
         </div>
 
         {/* Image URL */}
         <div>
-          <label className="block mb-1 font-medium">Image URL</label>
+          <label className="block mb-1 font-medium">steps</label>
           <input
             type="text"
-            name="image"
-            value={form.image}
+            name="steps"
+            value={form.steps}
             onChange={handleChange}
             className="w-full border rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-green-400"
           />
-          {errors.image && (
-            <p className="text-red-500 text-sm">{errors.image}</p>
+          {errors.steps && (
+            <p className="text-red-500 text-sm">{errors.steps}</p>
           )}
         </div>
 

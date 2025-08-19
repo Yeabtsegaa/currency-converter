@@ -54,7 +54,7 @@ const ConverterPage = () => {
       const exchangeRate = data.rates[toCurrency];
      
       // Calculate the converted amount
-      const convertedAmount = (amount * exchangeRate);
+      const convertedAmount = (amount * exchangeRate).toFixed(2);
      
       // Show the result
       setResult(convertedAmount);

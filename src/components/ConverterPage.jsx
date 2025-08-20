@@ -15,6 +15,12 @@ const ConverterPage = () => {
   // This function will convert the currency
   const convertCurrency = async () => {
     // First, let's check if user entered an amount
+
+    if(!amount || amount <=0) {
+      setError('please enter a valid amount');
+      setAmount('');
+      return;
+    }
    
 
 

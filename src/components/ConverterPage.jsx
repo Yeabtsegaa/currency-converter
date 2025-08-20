@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState  } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
 
@@ -115,8 +116,10 @@ const ConverterPage = () => {
 
 
   // This function goes back to welcome page
+  const navigate = useNavigate()
+
   const goBack = () => {
-    window.location.href = '/';
+    navigate ("/");
   };
 
 

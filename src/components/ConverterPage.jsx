@@ -125,7 +125,7 @@ const ConverterPage = () => {
           <h1>Currency Converter</h1>
           <p>Convert between different currencies</p>
         </div>
-       
+       <div>
         <div className="converter-form">
           {/* First currency selection */}
           <div className="input-group">
@@ -476,7 +476,7 @@ const ConverterPage = () => {
 
             </select>
           </div>
-
+    </div>
 
           {/* Amount input */}
           <div className="input-group">
@@ -487,8 +487,6 @@ const ConverterPage = () => {
                 id="amount"
                 type="number"
                 placeholder="Enter amount here"
-                min="0"
-                step="0.01"
                 value={amount}
                 onChange={handleAmountChange}
               />
@@ -499,13 +497,15 @@ const ConverterPage = () => {
           {/* Result display */}
           <div className="input-group">
             <label htmlFor="result">Converted Amount:</label>
+            <div>
             <input
               id="result"
-              type="text"
+              type="number"
               placeholder="Result will show here after conversion"
               readOnly
               value={result}
             />
+            </div>
           </div>
 
 

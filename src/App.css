@@ -222,7 +222,7 @@
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   margin: 20px;
-  max-width: 600px;
+  max-width: 1000px;
   width: 100%;
   align-self: center;
  
@@ -255,7 +255,7 @@
 .converter-form {
   padding: 30px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   gap: 20px;
 }
 
@@ -264,6 +264,7 @@
   display: flex;
   flex-direction: column;
   gap: 8px;
+  margin: 20px;
 }
 
 
@@ -373,24 +374,31 @@
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
+  margin: 20px;
   margin-top: 10px;
   box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
 }
 
 
 .convert-button:hover:not(:disabled) {
-  transform: translateY(-2px);
+  transform: translateY(2px);
   box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+  background: #6a9ef1ff;
 }
 
 
-.convert-button:disabled {
-  background: #cbd5e0;
-  cursor: not-allowed;
-  transform: none;
-  box-shadow: none;
+.clear-button{
+  background: #3b82f6;
+  color: white;
+  padding: 15px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1 rem;
+  font-weight: 600;
 }
-
+.clear-button:hover{
+  background: #6a9ef1ff
+}
 
 .error-message {
   background: #fed7d7;
@@ -403,13 +411,14 @@
 }
 
 
-.result-container {
+/* .result-container {
   background: #f7fafc;
   border-radius: 12px;
   padding: 25px;
   text-align: center;
   border: 2px solid #e2e8f0;
 }
+
 
 
 .result-container h3 {
@@ -424,11 +433,14 @@
   flex-direction: column;
   align-items: center;
   gap: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+} */
+
+#result{
+  width: 14rem;
 }
 
-
-.original-amount {
+/* .original-amount {
   font-size: 1.2rem;
   color: #4a5568;
   font-weight: 500;
@@ -439,10 +451,10 @@
   font-size: 1.5rem;
   color: #3b82f6;
   font-weight: bold;
-}
+} */
 
 
-.converted-amount {
+/* .converted-amount {
   font-size: 2rem;
   color: #2d3748;
   font-weight: 700;
@@ -451,9 +463,9 @@
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+ */
 
-
-.rate-info {
+/* .rate-info {
   color: #718096;
   font-size: 0.9rem;
   font-style: italic;
@@ -462,7 +474,7 @@
   border-radius: 8px;
   border: 1px solid #e2e8f0;
 }
-
+ */
 
 .navigation {
   margin-top: 30px;
@@ -480,6 +492,7 @@
   cursor: pointer;
   transition: all 0.3s ease;
   font-weight: 500;
+  margin-bottom:20px;
 }
 
 
@@ -491,13 +504,14 @@
 
 
 /* Responsive Design */
-@media (max-width: 600px) {
+@media (max-width: 1000px) {
   .converter-container {
     margin: 10px;
   }
  
   .converter-form {
     padding: 20px;
+    flex-direction: column;
   }
  
   .header h1 {

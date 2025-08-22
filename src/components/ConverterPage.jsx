@@ -501,7 +501,7 @@ const ConverterPage = () => {
             <input
               id="result"
               type="number"
-              placeholder="Result will show here after conversion"
+              placeholder="Result"
               readOnly
               value={result}
             />

@@ -11,7 +11,7 @@ function WelcomePage() {
   return (
     <div className="welcome-container">
       <div className="welcome-content">
-        <h1 className="welcome-title">Global Currency</h1>
+        <h1 className="welcome-title">CashFlip</h1>
         <p className="welcome-subtitle">Convert currencies in real-time</p>
         <button onClick={handleStart} className="welcome-button">
           Get Started

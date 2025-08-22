@@ -1,7 +1,4 @@
 
-
-
-
 *{
   margin:0;
   padding:0;
@@ -21,15 +18,15 @@
   position: relative;
 }
 
-
 .welcome-content {
-  flex: 1;
+  
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 800px;
   width: 100%;
+  border: 1px solid black;
 }
 
 
@@ -38,8 +35,9 @@
   font-family: sans-serif;
   font-weight: bold;
   margin-bottom: 10px;
-  color: #3b3b3b;
+  color: #000000ff;
   line-height: 1.1;
+  border: 1px solid black;
 }
 
 
@@ -58,17 +56,16 @@
   background-color: #2C4FFF;
   color: #fff;
   border: none;
-  border-radius: 87px;
+  border-radius: 70px;
   cursor: pointer;
-  transition: all 0.3s ease;
   font-weight: 600;
 }
 
 
 .welcome-button:hover {
-  background-color: #1e3acc;
-  transform: translateY(-2px);
-  box-shadow: 0px 10px 4px rgba(0, 0, 0, 0.3);
+  background-color: #102bb1ff;
+  transform: translateY(3px);
+  box-shadow: 5px 10px 20px rgba(51, 47, 247, 0.5);
 }
 
 
@@ -85,6 +82,7 @@
   color: #333;
   font-size: 1rem;
   font-weight: bold;
+  font-family: sans-serif;
 }
 
 
@@ -127,15 +125,16 @@
 
 
   .welcome-title {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
+    font-size: 4.5rem;
+    margin-bottom: 5px;
   }
 
 
   .welcome-subtitle {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-bottom: 30px;
     padding: 0 10px;
+    border: 1px solid black;
   }
 
 
@@ -153,35 +152,15 @@
   }
 }
 
-
-/* Extra Small Mobile Devices */
-@media (max-width: 360px) {
-  .welcome-title {
-    font-size: 2.2rem;
-  }
-
-
-  .welcome-subtitle {
-    font-size: 0.9rem;
-  }
-
-
-  .welcome-button {
-    padding: 12px 30px;
-    font-size: 1.2rem;
-  }
-}
-
-
 /* Landscape Mobile Orientation */
-@media (max-width: 768px) and (orientation: landscape) {
+/* @media (max-width: 768px) and (orientation: landscape) {
   .welcome-container {
     min-height: 100vh;
   }
 
 
   .welcome-title {
-    font-size: 2rem;
+    font-size: 1rem;
     margin-bottom: 10px;
   }
 
@@ -202,7 +181,7 @@
     position: relative;
     margin-top: 20px;
   }
-}
+} */
 
 
 

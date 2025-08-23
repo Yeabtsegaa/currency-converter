@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 *{
   margin:0;
@@ -5,85 +9,6 @@
 }
 
 
-/* Welcome Page Styles */
-.welcome-container {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background-color: #ADD8E6;
-  text-align: center;
-  padding: 20px;
-  position: relative;
-}
-
-.welcome-content {
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 800px;
-  width: 100%;
-  
-}
-
-
-.welcome-title {
-  font-size: 7rem;
-  font-family: sans-serif;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #000000ff;
-  line-height: 1.1;
- 
-}
-
-
-.welcome-subtitle {
-  font-size: 1.2rem;
-  font-family: sans-serif;
-  margin-bottom: 30px;
-  color: #000000;
-  max-width: 500px;
-}
-
-
-.welcome-button {
-  padding: 20px 70px;
-  font-size: 2.5rem;
-  background-color: #2C4FFF;
-  color: #fff;
-  border: none;
-  border-radius: 70px;
-  cursor: pointer;
-  font-weight: 600;
-}
-
-
-.welcome-button:hover {
-  background-color: #102bb1ff;
-  transform: translateY(3px);
-  box-shadow: 5px 10px 20px rgba(51, 47, 247, 0.5);
-}
-
-
-.welcome-button:active {
-  transform: translateY(0);
-}
-
-
-.welcome-footer {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
-  color: #333;
-  font-size: 1rem;
-  font-weight: bold;
-  font-family: sans-serif;
-}
 
 
 /* Tablet Responsive Design */

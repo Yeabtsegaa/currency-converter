@@ -119,21 +119,22 @@ const ConverterPage = () => {
 
 
   return (
-    <div className="converter-page">
-      <div className="converter-container">
-        <div className="header">
-          <h1>Currency Converter</h1>
-          <p>Convert between different currencies</p>
+    <div className="converterpage  min-h-screen bg-blue-200 flex flex-col font-sans items-center justify-center w-full py-9">
+      <div className="convertercontainer bg-white rounded-2xl w-10/12  min-h-8/12 self-center lg:m-[10px] md:m-[5px] sm:m-[5px] ">
+        <div className="headr bg-blue-500 text-white p-8 rounded-2xl text-center ">
+           <h1 className= "text-[2.8rem] font-bold m-0 font-sans">Currency Converter</h1>
+          <p className= "m-2 text-[1.0rem] font-bold font-sans">Convert between different currencies</p>
         </div>
-       <div>
-        <div className="converter-form">
+       <div className = "p-8 flex flex-col gap-2 ">
+        <div className="converterform  relative left-[20px] flex lg:flex-row md:flex-col flex-col gap-2 justify-center mb-20">
           {/* First currency selection */}
-          <div className="input-group">
-            <label htmlFor="from-currency">From Currency:</label>
+          <div className="input-group flex flex-col gap-2 m-2xl">
+            <label htmlFor="from-currency" className ="font-semibold text-[1.5rem]" >From Currency:</label>
             <select
               id="from-currency"
               value={fromCurrency}
               onChange={handleFromCurrencyChange}
+              className="p-4  border-2 border-gray-200 rounded-xl bg-sky-100 text-gray-700 w-11/12  "
             >
            
 
@@ -298,10 +299,10 @@ const ConverterPage = () => {
 
 
           {/* Swap button */}
-          <div className="swap-button-container">
+          <div className="swap-buttoncontainer flex justify-center mx-9 ">
             <button
               type="button"
-              className="swap-button"
+              className="swapbutton mt-[10px] text-white bg-gray-800 rounded-full w-12 h-12 text-xl flex items-center justify-center shadow-lg hover:scale-105 hover:bg-gray-900  "
               onClick={swapCurrencies}
               title="Swap currencies"
             >
@@ -311,12 +312,13 @@ const ConverterPage = () => {
 
 
           {/* Second currency selection */}
-          <div className="input-group">
-            <label htmlFor="to-currency">To Currency:</label>
+          <div className="  flex flex-col gap-2 m-2xl">
+            <label htmlFor="to-currency" className ="font-semibold text-[1.5rem]">To Currency:</label>
             <select
               id="to-currency"
               value={toCurrency}
               onChange={handleToCurrencyChange}
+              className="p-4 border-2 border-gray-200 rounded-xl bg-sky-100 text-gray-700 w-11/12 "
             >
               
   <option value="USD">US Dollar (USD)</option>
@@ -479,24 +481,25 @@ const ConverterPage = () => {
     </div>
 
           {/* Amount input */}
-          <div className="input-group">
-            <label htmlFor="amount">Amount to Convert:</label>
-            <div className="amount-input-container">
-              <span className="currency-symbol">$</span>
+          <div className="input-group flex flex-col items-center ">
+            <label htmlFor="amount" className ="font-semibold text-[1.2rem] " >Amount to Convert:</label>
+            <div className="amount-input-container relative flex items-center">
+              <span className="currency-symbol absolute left-[15px] font-semibold text-[1.1rem] z-[1] text-blue-500  ">$</span>
               <input
                 id="amount"
                 type="number"
                 placeholder="Enter amount here"
                 value={amount}
                 onChange={handleAmountChange}
+                className="p-4 px-10 border-2 border-gray-200 rounded-xl bg-sky-100 text-gray-700 "
               />
             </div>
           </div>
 
 
           {/* Result display */}
-          <div className="input-group">
-            <label htmlFor="result">Converted Amount:</label>
+          <div className="input-group flex flex-col mt-[20px] items-center">
+            <label htmlFor="result" className ="font-semibold text-[1.2rem]" >Converted Amount:</label>
             <div>
             <input
               id="result"
@@ -504,16 +507,17 @@ const ConverterPage = () => {
               placeholder="Result"
               readOnly
               value={result}
+              className="p-4  w-[17rem] border-2 border-gray-200 rounded-xl bg-sky-100 text-gray-700 "
             />
             </div>
           </div>
 
 
           {/* Action buttons */}
-          <div className="button-group">
+          <div className="">
             <button
               type="button"
-              className="convert-button"
+              className="convertbutton m-[20px] mt-[10px] bg-blue-500 text-white py-4 px-8 rounded-xl text-lg font-semibold shadow-lg  hover:bg-blue-600 hover:translate-y-1 active:translate-y-0 transition-all hover:shadow-[0_6px_20px_rgba(59,130,246,0.4)] hover:bg-blue-400"
               onClick={convertCurrency}
               disabled={isLoading}
             >
@@ -522,7 +526,7 @@ const ConverterPage = () => {
            
             <button
               type="button"
-              className="clear-button"
+              className="clearbutton lg:w-2/12 md:w-3/12 sm:w-4/12 w-8/12 bg-blue-500 text-white py-4 px-10 rounded-xl text-lg font-semibold shadow-lg  hover:bg-blue-600 hover:translate-y-1 active:translate-y-0 transition-all hover:shadow-[0_6px_20px_rgba(59,130,246,0.4)] hover:bg-blue-400"
               onClick={clearForm}
             >
               Clear Form
@@ -532,7 +536,7 @@ const ConverterPage = () => {
 
           {/* Error message */}
           {error && (
-            <div className="error-message">
+            <div className="errormessage bg-red-100 text-red-700 p-4 rounded-lg text-center font-medium border border-red-300 ">
               {error}
             </div>
           )}
@@ -548,8 +552,8 @@ const ConverterPage = () => {
 
 
         {/* Navigation */}
-        <div className="navigation">
-          <button className="back-button" onClick={goBack}>
+        <div className="naviation mt-[30px] text-center">
+          <button className=" hover:bg-blue-600 hover:text-white bg-transparent text-blue-500 border-2 border-blue-500 px-6 py-3 rounded-lg text-base cursor-pointer transition-all duration-300 ease-in-out font-medium mb-5 " onClick={goBack}>
             ← Back to Welcome Page
           </button>
         </div>

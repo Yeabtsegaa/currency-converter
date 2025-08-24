@@ -1,22 +1,19 @@
-Currency Converter
+# **Currency Converter**
 
-A simple and responsive Currency Converter application built with React and Tailwind CSS. It allows users to convert between different currencies in real time using live exchange rates.
+A simple React application that allows users to convert amounts between different currencies using real-time exchange rates.
 
-Features
+---
 
-Real-Time Conversion: Get up-to-date exchange rates.
+## **Features**
+- ✅ Convert between multiple currencies.
+- ✅ Real-time exchange rates.
+- ✅ User-friendly interface.
+- ✅ Responsive design with Tailwind CSS.
 
-Multiple Currencies: Supports conversions for various currencies.
+---
 
-Responsive Design: Works seamlessly on desktop and mobile devices.
-
-User-Friendly Interface: Simple and clean design.
-
-Tech Stack
-
-Frontend: React, Tailwind CSS
-
-API: Exchange rate API ( exchangerate-api.com
-)
-
-Build Tool: Vite 
+## **Tech Stack**
+- **React** – Frontend framework
+- **Vite** – Build tool
+- **Tailwind CSS** – Styling
+- **Exchange Rate API** – For fetching currency data
